@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Bé Yêu ❤️</title>
+    <!-- Phông chữ nghệ thuật từ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe6ea 0%, #ffc0cb 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Khung nội dung chính ở giữa */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(5px);
+            border: 3px solid #ffb6c1;
+            z-index: 10;
+            animation: bounceIn 1.2s ease-in-out;
+        }
+
+        /* Tiêu đề màu hồng */
+        .title {
+            font-family: 'Pacifico', cursive;
+            color: #ff4d6d;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.8);
+        }
+
+        /* Lời nhắn nhủ */
+        .message {
+            font-family: 'Dancing Script', cursive;
+            color: #59253a;
+            font-size: 1.6rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        /* Nút tim nhỏ */
+        .heart-btn {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .heart-btn:hover {
+            background-color: #ff0054;
+            transform: scale(1.08);
+        }
+
+        /* Các hình Cu Shin xung quanh */
+        .shin {
+            position: absolute;
+            width: 100px;
+            height: auto;
+            pointer-events: none;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.15));
+        }
+
+        /* Vị trí & hiệu ứng chuyển động Shin */
+        .shin-1 {
+            top: 5%;
+            left: 5%;
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+
+        .shin-2 {
+            top: 8%;
+            right: 5%;
+            animation: floatSlow 3.5s ease-in-out infinite 0.5s;
+        }
+
+        .shin-3 {
+            bottom: 5%;
+            left: 7%;
+            animation: floatSlow 4.5s ease-in-out infinite 1s;
+        }
+
+        .shin-4 {
+            bottom: 5%;
+            right: 7%;
+            animation: floatSlow 3.8s ease-in-out infinite 1.5s;
+        }
+
+        /* Animation nảy và lắc nhẹ */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 600px) {
+            .shin { width: 70px; }
+            .title { font-size: 1.8rem; }
+            .message { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bốn hình Cu Shin xung quanh (Thay URL ảnh nếu muốn) -->
+    <img class="shin shin-1" src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-crayon-shin-chan-png-image_12154446.png" alt="Cu Shin 1">
+    <img class="shin shin-2" src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-crayon-shin-chan-png-image_12154447.png" alt="Cu Shin 2">
+    <img class="shin shin-3" src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-crayon-shin-chan-png-image_12154448.png" alt="Cu Shin 3">
+    <img class="shin shin-4" src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-crayon-shin-chan-png-image_12154449.png" alt="Cu Shin 4">
+
+    <!-- Thẻ nội dung chính -->
+    <div class="card">
+        <!-- Chỉnh tiêu đề tại đây -->
+        <h1 class="title">Gửi Công Chúa Của Anh 💕</h1>
+
+        <!-- Chỉnh lời nhắn tại đây -->
+        <p class="message">
+            Cảm ơn em đã xuất hiện và làm cho thế giới của anh trở nên ngọt ngào hơn mỗi ngày. 
+            Chúc em luôn vui vẻ, đáng yêu như Shin-chan và luôn yêu thương anh thật nhiều nhé! 🥰✨
+        </p>
+
+        <!-- Nút bấm tương tác -->
+        <button class="heart-btn" onclick="sayLove()">Bấm vào đây nè! ❤️</button>
+    </div>
+
+    <script>
+        function sayLove() {
+            alert("Anh yêu em nhiều lắm lắm luôn! 💖✨");
+        }
+    </script>
+</body>
+</html>
